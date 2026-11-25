@@ -257,11 +257,20 @@ class _AdminStaffManagementScreenState extends State<AdminStaffManagementScreen>
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const Text('Assign Working Station Location *', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 13)),
+                        const Expanded(
+                          child: Text(
+                            'Assign Station Location *',
+                            style: TextStyle(fontWeight: FontWeight.w600, fontSize: 13),
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
                         TextButton.icon(
-                          style: TextButton.styleFrom(visualDensity: VisualDensity.compact),
-                          icon: const Icon(Icons.add_location_alt, size: 16),
-                          label: const Text('+ New Location', style: TextStyle(fontSize: 12)),
+                          style: TextButton.styleFrom(
+                            visualDensity: VisualDensity.compact,
+                            padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                          ),
+                          icon: const Icon(Icons.add_location_alt, size: 15),
+                          label: const Text('+ New Location', style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold)),
                           onPressed: () {
                             Navigator.pop(dialogCtx);
                             _showAddLocationDialog();
